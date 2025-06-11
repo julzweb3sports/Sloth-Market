@@ -120,7 +120,7 @@ const config = {
             custom_pricing: false // Set to true to enable custom pricing mode (hides price display on card, allows custom price input in mint modal)
         },
         {
-            name: 'Project 2',
+            name: 'Test 2',
             description: 'Exclusive NFT collection with special utilities',
             image: 'https://placehold.co/400x400/1E1E1E/11f250',
             projectName: 'project2',
