@@ -11,10 +11,10 @@ const config = {
 
     // Site and Style Configuration
     site: {
-        title: 'Brand Title', // Change the title of your brand
-        subtitle: 'This is your subtitle', // Change the subtitle of your brand
-        logo: 'https://placehold.co/200x80/1E1E1E/11f250?text=Your_logo',
-        favicon: 'https://placehold.co/32x32/1E1E1E/11f250?text=NMKR', // Add your favicon URL here, recommended size: 32x32
+        title: 'SLOTH MARKET', // Change the title of your brand
+        subtitle: 'The worlds first open marketplace for Gym Memberships & Fitness Services', // Change the subtitle of your brand
+        logo: 'https://i.imgur.com/QugPsga_d.png?maxwidth=520&shape=thumb&fidelity=high',
+        favicon: 'https://i.imgur.com/TQsa1iC_d.png?maxwidth=520&shape=thumb&fidelity=high', // Add your favicon URL here, recommended size: 32x32
         defaultTheme: 'dark', // Change default theme setting: 'light' or 'dark'
         fonts: {
             primary: 'Inter', // Default font 'Inter', change to your preferred font
@@ -61,12 +61,12 @@ const config = {
             }
         },
         colors: {
-            accent: '#11f250',  // Main accent color
-            accentHover: '#0edf45',  // Accent color on hover
+            accent: '#ffde59',  // Main accent color
+            accentHover: '#ff914d',  // Accent color on hover
             accentText: '#000000',  // Text color on accent backgrounds 
             background: {
-                light: '#ffffff',
-                dark: '#1E1E1E'
+                light: '#ffde59',
+                dark: '#1E1npm'
             },
             text: {
                 light: '#333333',
@@ -86,7 +86,7 @@ const config = {
             mobileImage: 'https://placehold.co/800x600/1E1E1E/11f250?text=800x600', // Matching mobile version, recommended size: 800x600
             overlay: {
                 enabled: true, //change to false to remove the banner overlay
-                title: 'Your Featured Collection', //change the title here
+                title: 'Sloth Elite NFT Edition', //change the title here
                 description: 'Discover our latest and most exclusive NFT collection', //change the description here
                 cta: {
                     enabled: true, //change to false to remove the button
@@ -96,10 +96,14 @@ const config = {
             }
         },
         about: {
-            title: 'About Section Title',
+            title: 'Fitness is for everyone!',
             content: `
-                <p>Welcome to our NFT projects! Here's where you can tell your story and explain what makes your projects unique.</p>
-                <p>Add multiple paragraphs to describe your projects' vision, goals, and unique features.</p>
+                <p>The Sloth welcomes you! We want to make it as easy and seamless as possible for Gyms, Coaches & Fitness cooperations to offer their service and memberships.</p>
+                <p>...</p>
+                <p>At the same time, we are empowering individuals to pay with their preffered currencies and (if they choose so) to resell or gift their acquired service</p>
+                <p>...</p>
+                <p>If you want to list your memberships or services, reach out to info@slothgains.com or via TG @t.me/slothgains </p>
+
             `
         }
     },
@@ -109,10 +113,10 @@ const config = {
     // Add more projects as needed, make sure to also add the project UID to the env file
     projects: [
         {
-            name: 'Project 1', //change the project name here
+            name: 'SLOTHTEST', //change the project name here
             description: 'A unique collection of digital art pieces', //change the description here
             image: 'https://placehold.co/400x400/1E1E1E/11f250', //change the image here, recommended size: 400x400
-            projectName: 'project1', //change the project name here, must match in the env file (For projectName: 'project1' the env must contain: NMKR_PROJECT_UID_PROJECT1=your_project_UID )
+            projectName: 'SLOTHTEST', //change the project name here, must match in the env file (For projectName: 'project1' the env must contain: NMKR_PROJECT_UID_PROJECT1=your_project_UID )
             custom_pricing: false // Set to true to enable custom pricing mode (hides price display on card, allows custom price input in mint modal)
         },
         {
@@ -130,15 +134,150 @@ const config = {
             image: 'https://placehold.co/400x400/1E1E1E/11f250',
             projectName: 'project3',
             custom_pricing: false
-        }
+        },
+        {
+            name: 'Project 4',
+            description: 'Limited edition collectibles with rare attributes',
+            image: 'https://placehold.co/400x400/1E1E1E/11f250',
+            projectName: 'project4',
+            custom_pricing: false
+        },
+        
     ],
+
+    // Subpages Configuration
+    subpages: {
+        enabled: true, // Master switch for subpages feature
+        showInNavbar: true, // Show subpage links in navbar
+        pages: [
+            {
+                name: 'Memberships', // Display name in navbar
+                url: 'fitness', // Creates /fitness URL
+                enabled: true,
+                description: {
+                    title: 'Fitness & Gym Memberships',
+                    content: `
+                        <p>Transform your fitness journey with our exclusive gym membership NFTs!</p>
+                        <p>Each NFT represents real gym access and membership benefits that you can use, trade, or gift.</p>
+                        <p>Perfect for fitness enthusiasts who want flexibility in their workout routine.</p>
+                    `
+                },
+                projects: [
+                    {
+                        name: 'SLOTHTEST',
+                        description: 'Premium gym access with all amenities included.',
+                        image: 'https://placehold.co/400x400/ffde59/000000?text=Gold+Gym',
+                        projectName: 'SLOTHTEST', // Needs NMKR_PROJECT_UID_GYM_GOLD in .env
+                        custom_pricing: true
+                    },
+                    {
+                        name: 'Basic Gym Access',
+                        description: 'Essential gym membership for everyday fitness',
+                        image: 'https://placehold.co/400x400/ff914d/000000?text=Basic+Gym',
+                        projectName: 'gym_basic', // Needs NMKR_PROJECT_UID_GYM_BASIC in .env
+                        custom_pricing: false
+                    }
+                ]
+            },
+            {
+                name: 'Events / Tickets',
+                url: 'training',
+                enabled: true,
+                description: {
+                    title: 'Personal Training Services',
+                    content: `
+                        <p>Get personalized fitness guidance with our trainer NFT collection!</p>
+                        <p>Each NFT grants you access to professional personal training sessions.</p>
+                        <p>Choose your commitment level and pay what feels right for your fitness goals.</p>
+                    `
+                },
+                projects: [
+                    {
+                        name: 'PT Session Package',
+                        description: 'Professional one-on-one training sessions',
+                        image: 'https://placehold.co/400x400/1E1E1E/ffde59?text=PT+Session',
+                        projectName: 'pt_session', // Needs NMKR_PROJECT_UID_PT_SESSION in .env
+                        custom_pricing: true,
+                        minimumCustomPrice: 50.0
+                    }
+                ]
+            },
+            {
+                name: 'Coaching / Services',
+                url: 'nutrition',
+                enabled: true, // Disabled - won't show in navbar
+                description: {
+                    title: 'Nutrition Coaching Services',
+                    content: `
+                        <p>Professional nutrition guidance to complement your fitness journey.</p>
+                        <p>Get personalized meal plans and dietary advice from certified nutritionists.</p>
+                    `
+                },
+                projects: [
+                    {
+                        name: 'Nutrition Consultation',
+                        description: 'Professional dietary guidance and meal planning',
+                        image: 'https://placehold.co/400x400/11f250/000000?text=Nutrition',
+                        projectName: 'nutrition_plan', // Needs NMKR_PROJECT_UID_NUTRITION_PLAN in .env
+                        custom_pricing: true,
+                        minimumCustomPrice: 25.0
+                    }
+                ]
+            },
+            {
+                name: 'Communities',
+                url: 'nutrition',
+                enabled: true, // Disabled - won't show in navbar
+                description: {
+                    title: 'Nutrition Coaching Services',
+                    content: `
+                        <p>Professional nutrition guidance to complement your fitness journey.</p>
+                        <p>Get personalized meal plans and dietary advice from certified nutritionists.</p>
+                    `
+                },
+                projects: [
+                    {
+                        name: 'Nutrition Consultation',
+                        description: 'Professional dietary guidance and meal planning',
+                        image: 'https://placehold.co/400x400/11f250/000000?text=Nutrition',
+                        projectName: 'nutrition_plan', // Needs NMKR_PROJECT_UID_NUTRITION_PLAN in .env
+                        custom_pricing: true,
+                        minimumCustomPrice: 25.0
+                    }
+                ]
+            },
+            {
+                name: 'Art',
+                url: 'training',
+                enabled: true,
+                description: {
+                    title: 'Personal Training Services',
+                    content: `
+                        <p>Get personalized fitness guidance with our trainer NFT collection!</p>
+                        <p>Each NFT grants you access to professional personal training sessions.</p>
+                        <p>Choose your commitment level and pay what feels right for your fitness goals.</p>
+                    `
+                },
+                projects: [
+                    {
+                        name: 'PT Session Package',
+                        description: 'Professional one-on-one training sessions',
+                        image: 'https://placehold.co/400x400/1E1E1E/ffde59?text=PT+Session',
+                        projectName: 'pt_session', // Needs NMKR_PROJECT_UID_PT_SESSION in .env
+                        custom_pricing: true,
+                        minimumCustomPrice: 50.0
+                    }
+                ]
+            }
+        ]
+    },
 
     // Social Links
     // Add your project's social media links
     social: {
-        twitter: 'https://twitter.com/nmkr_io',
+        twitter: 'https://twitter.com/slothgainz',
         discord: 'https://discord.gg/G3aBKSFnb6',
-        telegram: 'https://t.me/nmkrtoken'
+        telegram: 'https://t.me/slothgainsofficial'
     }
 };
 
